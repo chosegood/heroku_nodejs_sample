@@ -21,3 +21,17 @@ window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
   */
 
 };
+
+if(!window.jQuery) {
+
+  $.ajaxError(function(event, jqxhr, settings, exception) {
+    alert("error");
+  });
+
+  $.ajaxSetup({
+    error: function (jqXHR, textStatus, errorThrown) {
+      alert("error");
+    }
+  });
+
+}
